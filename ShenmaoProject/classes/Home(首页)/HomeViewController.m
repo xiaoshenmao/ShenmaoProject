@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "UIBarButtonItem+CustomUIBarButton.h"
 
 @interface HomeViewController ()
 
@@ -16,22 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"首页";
+    [self setNavigationAttribute];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setNavigationAttribute
+{
+    UIBarButtonItem *item = [UIBarButtonItem setButtonNormal:@"nav_me_normal" andHighlight:@"nav_me_highlighted" andTarger:self andTitle:nil andAction:@selector(rightButtonClick)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)rightButtonClick{
+    NSLog(@"%s",__func__);
 }
-*/
-
 @end
