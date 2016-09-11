@@ -7,6 +7,7 @@
 //
 
 #import "MusicViewController.h"
+#import "UIBarButtonItem+CustomUIBarButton.h"
 
 @interface MusicViewController ()
 
@@ -16,22 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self setNavigationAttribute];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setNavigationAttribute{
+    UIBarButtonItem *Item = [UIBarButtonItem setButtonNormal:@"nav_music_libraries_normal" andHighlight:@"nav_music_libraries_highlighted" andTarger:self andTitle:nil andAction:@selector(navMusicClick)];
+    self.navigationItem.leftBarButtonItem = Item;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)navMusicClick{
+//    self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:<#(BOOL)#>
 }
-*/
-
 @end

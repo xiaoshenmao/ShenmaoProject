@@ -17,14 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"首页";
+    UIImageView *homeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
+                             self.navigationItem.titleView = homeView;
     [self setNavigationAttribute];
 }
 
 - (void)setNavigationAttribute
 {
-    UIBarButtonItem *item = [UIBarButtonItem setButtonNormal:@"nav_me_normal" andHighlight:@"nav_me_highlighted" andTarger:self andTitle:nil andAction:@selector(rightButtonClick)];
-    self.navigationItem.rightBarButtonItem = item;
+    
 }
 
 - (void)rightButtonClick{

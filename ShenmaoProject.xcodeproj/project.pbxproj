@@ -20,6 +20,7 @@
 		EA155F741D8318AA00A62338 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F731D8318AA00A62338 /* ReadingViewController.m */; };
 		EA155F771D8319E100A62338 /* MainNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F761D8319E100A62338 /* MainNavigationViewController.m */; };
 		EAD5634B1D84905800CA79C2 /* UIButton+UIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD5634A1D84905800CA79C2 /* UIButton+UIBarButtonItem.m */; };
+		EAD5634E1D852FC000CA79C2 /* ShenmaoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		EA155F761D8319E100A62338 /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		EAD563491D84905800CA79C2 /* UIBarButtonItem+CustomUIBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CustomUIBarButton.h"; sourceTree = "<group>"; };
 		EAD5634A1D84905800CA79C2 /* UIButton+UIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+UIBarButtonItem.m"; sourceTree = "<group>"; };
+		EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShenmaoBaseViewController.h; path = ../ShenmaoBaseViewController.h; sourceTree = "<group>"; };
+		EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShenmaoBaseViewController.m; path = ../ShenmaoBaseViewController.m; sourceTree = "<group>"; };
 		F14FC312EDB60C9E57FB291C /* Pods-ShenmaoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShenmaoProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +202,8 @@
 		EAD563481D84905800CA79C2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */,
+				EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */,
 				EAD563491D84905800CA79C2 /* UIBarButtonItem+CustomUIBarButton.h */,
 				EAD5634A1D84905800CA79C2 /* UIButton+UIBarButtonItem.m */,
 			);
@@ -336,6 +341,7 @@
 				EA155F471D83111700A62338 /* main.m in Sources */,
 				EAD5634B1D84905800CA79C2 /* UIButton+UIBarButtonItem.m in Sources */,
 				EA155F6B1D83188600A62338 /* HomeViewController.m in Sources */,
+				EAD5634E1D852FC000CA79C2 /* ShenmaoBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

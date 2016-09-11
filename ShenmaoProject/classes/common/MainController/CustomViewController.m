@@ -12,6 +12,7 @@
 #import "MusicViewController.h"
 #import "ReadingViewController.h"
 #import "MainNavigationViewController.h"
+#import "UIBarButtonItem+CustomUIBarButton.h"
 @interface CustomViewController ()
 
 @end
@@ -22,10 +23,10 @@
     [super viewDidLoad];
     //setting navigation attribute
     NSMutableDictionary *tabNomal = [NSMutableDictionary dictionary];
-    tabNomal [NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    tabNomal [NSFontAttributeName] = [UIFont systemFontOfSize:11];
     tabNomal [NSForegroundColorAttributeName] = [UIColor grayColor];
     NSMutableDictionary *tabSelected = [NSMutableDictionary dictionary];
-    tabSelected [NSFontAttributeName] = [UIFont systemFontOfSize:15];
+    tabSelected [NSFontAttributeName] = [UIFont systemFontOfSize:11];
     tabSelected [NSForegroundColorAttributeName] = [UIColor darkGrayColor];
     
     //setting appearance
@@ -48,9 +49,19 @@
 - (void)setController:(UIViewController *)controller andNomalImage:(UIImage *)nomalImage andSelectedImage:(UIImage *)selectedImage andTitle:(NSString *)title{
     MainNavigationViewController *navigation = [[MainNavigationViewController alloc] initWithRootViewController:controller];
      navigation.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+    
     navigation.tabBarItem.title = title;
     navigation.tabBarItem.selectedImage = selectedImage;
     navigation.tabBarItem.image = nomalImage;
     [self addChildViewController:navigation];
+}
+
+- (void)mainLeftButtonClick{
+    NSLog(@"%s",__func__);
+    
+}
+
+- (void)mainMusicButtonClick{
+    NSLog(@"%s",__func__);
 }
 @end

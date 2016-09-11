@@ -7,6 +7,8 @@
 //
 
 #import "MainNavigationViewController.h"
+#import "UIBarButtonItem+CustomUIBarButton.h"
+
 
 @interface MainNavigationViewController ()
 
@@ -15,38 +17,32 @@
 @implementation MainNavigationViewController
 
 //+ (void)load{
-//    UIButton *rightLbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [rightLbutton setImage:[UIImage imageNamed:@"nav_me_normal"] forState:UIControlStateNormal];
-//    [rightLbutton setImage:[UIImage imageNamed:@"nav_me_highlighted"] forState:UIControlStateHighlighted];
-//    UIButton *rightRbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [rightRbutton setImage:[UIImage imageNamed:@"nav_music_libraries_normal"] forState:UIControlStateNormal];
-//    [rightRbutton setImage:[UIImage imageNamed:@"nav_music_libraries_highlighted"] forState:UIControlStateHighlighted];
-//    UIBarButtonItem *Item1 = [[UIBarButtonItem alloc] initWithCustomView:(UIView *) rightLbutton];
-//    UIBarButtonItem *Item2 = [[UIBarButtonItem alloc] initWithCustomView:(UIView *) rightRbutton];
-////    self.navigationItem.rightBarButtonItems = @[Item1,Item2];
+//    
 //}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationItem];
 }
-//- (instancetype) initWithRootViewController:(UIViewController *)rootViewController{
-//    if (self = [super init]) {
-//        //
-//    }
-//    return self;
-//}
-- (void)setNavigationItem{
-    UIButton *rightLbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [rightLbutton setImage:[UIImage imageNamed:@"nav_me_normal"] forState:UIControlStateNormal];
-            [rightLbutton setImage:[UIImage imageNamed:@"nav_me_highlighted"] forState:UIControlStateHighlighted];
-    [rightLbutton sizeToFit];
-            UIButton *rightRbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [rightRbutton setImage:[UIImage imageNamed:@"nav_music_libraries_normal"] forState:UIControlStateNormal];
-            [rightRbutton setImage:[UIImage imageNamed:@"nav_music_libraries_highlighted"] forState:UIControlStateHighlighted];
-        [rightRbutton sizeToFit];
-            UIBarButtonItem *Item1 = [[UIBarButtonItem alloc] initWithCustomView:(UIView *) rightLbutton];
-            UIBarButtonItem *Item2 = [[UIBarButtonItem alloc] initWithCustomView:(UIView *) rightRbutton];
-                self.navigationItem.rightBarButtonItems = @[Item1,Item2];
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController{
+    if (self = [super initWithRootViewController:rootViewController]) {
+        UIBarButtonItem *mainLeftButton = [UIBarButtonItem setButtonNormal:@"nav_me_normal" andHighlight:@"nav_me_highlighted" andTarger:self andTitle:nil andAction:@selector(mainLeftButtonClick)];
+        UIBarButtonItem *mainRightButton = [UIBarButtonItem setButtonNormal:@"more_normal" andHighlight:@"more_highlighted" andTarger:self andTitle:nil andAction:@selector(mainMusicButtonClick)];
+        rootViewController.navigationItem.rightBarButtonItems = @[mainLeftButton,mainRightButton];
     }
+    return self;
+}
+
+- (void)mainLeftButtonClick{
+       
+}
+
+- (void)setNavigationItem{
+    
+}
+
+- (void)mainMusicButtonClick{
+    NSLog(@"%s",__func__);
+}
 @end
+
