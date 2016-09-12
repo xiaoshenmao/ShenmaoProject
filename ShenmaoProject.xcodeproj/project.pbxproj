@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EF729DFE4E3A4E6AE02E0C1 /* libPods-ShenmaoProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */; };
+		E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */; };
 		EA155F471D83111700A62338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F461D83111700A62338 /* main.m */; };
 		EA155F4A1D83111700A62338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F491D83111700A62338 /* AppDelegate.m */; };
 		EA155F521D83111700A62338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA155F511D83111700A62338 /* Assets.xcassets */; };
@@ -26,6 +27,9 @@
 /* Begin PBXFileReference section */
 		240050ED4BBAFACB65BEDF9F /* Pods-ShenmaoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShenmaoProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject.release.xcconfig"; sourceTree = "<group>"; };
 		89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShenmaoProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8EB3F941D867A250078CCD6 /* UIButton+CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CustomButton.h"; sourceTree = "<group>"; };
+		E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CustomButton.m"; sourceTree = "<group>"; };
+		E8EB3F9B1D8686A90078CCD6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		EA155F421D83111700A62338 /* ShenmaoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShenmaoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA155F461D83111700A62338 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA155F481D83111700A62338 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		EA155F451D83111700A62338 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E8EB3F9B1D8686A90078CCD6 /* PrefixHeader.pch */,
 				EA155F511D83111700A62338 /* Assets.xcassets */,
 				EA155F531D83111700A62338 /* LaunchScreen.storyboard */,
 				EA155F561D83111700A62338 /* Info.plist */,
@@ -206,6 +211,8 @@
 				EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */,
 				EAD563491D84905800CA79C2 /* UIBarButtonItem+CustomUIBarButton.h */,
 				EAD5634A1D84905800CA79C2 /* UIButton+UIBarButtonItem.m */,
+				E8EB3F941D867A250078CCD6 /* UIButton+CustomButton.h */,
+				E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -333,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA155F711D8318A100A62338 /* MusicViewController.m in Sources */,
+				E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */,
 				EA155F4A1D83111700A62338 /* AppDelegate.m in Sources */,
 				EA155F6E1D83189200A62338 /* MovieViewController.m in Sources */,
 				EA155F681D83169F00A62338 /* CustomViewController.m in Sources */,
@@ -385,6 +393,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -426,6 +435,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -444,6 +454,8 @@
 			baseConfigurationReference = F14FC312EDB60C9E57FB291C /* Pods-ShenmaoProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ShenmaoProject/PrefixHeader.pch;
 				INFOPLIST_FILE = ShenmaoProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -457,6 +469,8 @@
 			baseConfigurationReference = 240050ED4BBAFACB65BEDF9F /* Pods-ShenmaoProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ShenmaoProject/PrefixHeader.pch;
 				INFOPLIST_FILE = ShenmaoProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

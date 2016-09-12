@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  ShenmaoProject
+//
+//  Created by xiangyuhui on 16/9/12.
+//  Copyright © 2016年 神猫. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+//屏幕
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+// 是否为中文
+#define IS_CH_SYMBOL(chr)               ((int)(chr)>127)
+#define StringByTrimWhiteSpace(text)    [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+#define IsStringEmpty(string)           (!string || [@"" isEqualToString:string])
+#define IsStringNotEmpty(string)        (string && ![@"" isEqualToString:string])
+
+// 字体
+#pragma mark - font
+#define FontWithNameSize(name, size)    [UIFont fontWithName:name size:size]
+#define FontWithSize(size)              [UIFont systemFontOfSize:size]
+#define ScoreFontWithSize(fontSize)     [UIFont fontWithName:@"Bradley Hand" size:fontSize]
+#define BoldFontWithSize(size)          [UIFont boldSystemFontOfSize:size]
+#define BoldSystemFont(size)            [UIFont boldSystemFontOfSize:size]
+#define systemFont(size)                [UIFont systemFontOfSize:size]
+
+#endif /* PrefixHeader_pch */
