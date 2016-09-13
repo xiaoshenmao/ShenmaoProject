@@ -11,6 +11,19 @@
 
 @interface HomeModel : NSObject
 
+@property (nonatomic, strong) NSString *authorId;
+@property (nonatomic, strong) NSString *commentNum;
+@property (nonatomic, strong) NSString *hpImgOriginalUrl;
+@property (nonatomic, strong) NSString *hpImgUrl;
+@property (nonatomic, strong) NSString *hpMaketTime;
+@property (nonatomic, strong) NSString *hpTitle;
+@property (nonatomic, strong) NSString *hpcontentId;
+@property (nonatomic, strong) NSString *webUrl;
+@property (nonatomic, strong) NSString *lastUpdateDate;
+@property (nonatomic, strong) NSString *wbImgUrl;
+@property (nonatomic, strong) NSString *shareNum;
+@property (nonatomic, strong) NSString *praisenum;
+
 
 
 @end

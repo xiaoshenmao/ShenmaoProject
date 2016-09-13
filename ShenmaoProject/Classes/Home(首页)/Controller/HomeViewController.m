@@ -8,10 +8,10 @@
 
 #import "HomeViewController.h"
 #import "UIBarButtonItem+CustomUIBarButton.h"
-
+#import "HomeModel.h"
 #import "GMCPagingScrollView.h"
 #import "UIButton+CustomButton.h"
-
+#import <MJExtension.h>
 
 
 @interface HomeViewController ()<GMCPagingScrollViewDelegate,GMCPagingScrollViewDataSource>
@@ -120,14 +120,15 @@
 
 #pragma mark - network
 - (void)setNetworks{
-    [SMHttpRequste requestHomeMoreWithSuccess:^(id responseObject) {
-        
-        NSLog(@"%@",responseObject);
-    } fail:^(NSError *error) {
-        NSLog(@"%@",error);
-        
-    }];
-    
+//    [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
+//       NSMutableDictionary  *diction = [NSDictionary mj_objectArrayWithKeyValuesArray:responseObject];
+//        
+//        NSLog(@"%@",responseObject);
+//    } fail:^(NSError *error) {
+//        NSLog(@"%@",error);
+//        
+//    }];
+//    
     
     
    }
