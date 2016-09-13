@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EF729DFE4E3A4E6AE02E0C1 /* libPods-ShenmaoProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */; };
+		E8E80AF71D87952F001B0A9E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E80AF61D87952F001B0A9E /* UIView+Frame.m */; };
 		E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */; };
 		EA155F471D83111700A62338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F461D83111700A62338 /* main.m */; };
 		EA155F4A1D83111700A62338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F491D83111700A62338 /* AppDelegate.m */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		240050ED4BBAFACB65BEDF9F /* Pods-ShenmaoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShenmaoProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject.release.xcconfig"; sourceTree = "<group>"; };
 		89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShenmaoProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E80AF51D87952F001B0A9E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E8E80AF61D87952F001B0A9E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		E8EB3F941D867A250078CCD6 /* UIButton+CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CustomButton.h"; sourceTree = "<group>"; };
 		E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CustomButton.m"; sourceTree = "<group>"; };
 		E8EB3F9B1D8686A90078CCD6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -52,8 +55,8 @@
 		EA155F761D8319E100A62338 /* MainNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationViewController.m; sourceTree = "<group>"; };
 		EAD563491D84905800CA79C2 /* UIBarButtonItem+CustomUIBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CustomUIBarButton.h"; sourceTree = "<group>"; };
 		EAD5634A1D84905800CA79C2 /* UIButton+UIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+UIBarButtonItem.m"; sourceTree = "<group>"; };
-		EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShenmaoBaseViewController.h; path = ../ShenmaoBaseViewController.h; sourceTree = "<group>"; };
-		EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShenmaoBaseViewController.m; path = ../ShenmaoBaseViewController.m; sourceTree = "<group>"; };
+		EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShenmaoBaseViewController.h; sourceTree = "<group>"; };
+		EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShenmaoBaseViewController.m; sourceTree = "<group>"; };
 		F14FC312EDB60C9E57FB291C /* Pods-ShenmaoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShenmaoProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +134,7 @@
 		EA155F5E1D83166600A62338 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				EA155F5F1D83166600A62338 /* common */,
+				EA155F5F1D83166600A62338 /* Common */,
 				EA155F621D83166600A62338 /* Home(首页) */,
 				EA155F631D83166600A62338 /* Movie(电影) */,
 				EA155F641D83166600A62338 /* Music(音乐) */,
@@ -140,13 +143,16 @@
 			path = classes;
 			sourceTree = "<group>";
 		};
-		EA155F5F1D83166600A62338 /* common */ = {
+		EA155F5F1D83166600A62338 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */,
+				EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */,
 				EAD563481D84905800CA79C2 /* Category */,
 				EA155F601D83166600A62338 /* Lib */,
 				EA155F611D83166600A62338 /* MainController */,
 			);
+			name = Common;
 			path = common;
 			sourceTree = "<group>";
 		};
@@ -207,12 +213,12 @@
 		EAD563481D84905800CA79C2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */,
-				EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */,
 				EAD563491D84905800CA79C2 /* UIBarButtonItem+CustomUIBarButton.h */,
 				EAD5634A1D84905800CA79C2 /* UIButton+UIBarButtonItem.m */,
 				E8EB3F941D867A250078CCD6 /* UIButton+CustomButton.h */,
 				E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */,
+				E8E80AF51D87952F001B0A9E /* UIView+Frame.h */,
+				E8E80AF61D87952F001B0A9E /* UIView+Frame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E80AF71D87952F001B0A9E /* UIView+Frame.m in Sources */,
 				EA155F711D8318A100A62338 /* MusicViewController.m in Sources */,
 				E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */,
 				EA155F4A1D83111700A62338 /* AppDelegate.m in Sources */,

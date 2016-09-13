@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReadingViewController : UIViewController
+@interface ReadingViewController : ShenmaoBaseViewController
 
 @end

@@ -16,10 +16,6 @@
 
 @implementation MainNavigationViewController
 
-//+ (void)load{
-//    
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationItem];

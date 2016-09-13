@@ -29,4 +29,9 @@
 #define BoldSystemFont(size)            [UIFont boldSystemFontOfSize:size]
 #define systemFont(size)                [UIFont systemFontOfSize:size]
 
+//常用的头文件
+#import "UIView+Frame.h"
+#import "Masonry.h"
+#import "ShenmaoBaseViewController.h"
+
 #endif /* PrefixHeader_pch */

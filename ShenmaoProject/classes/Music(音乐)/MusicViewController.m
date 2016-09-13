@@ -21,6 +21,7 @@
 }
 
 - (void)setNavigationAttribute{
+    self.navigationItem.title = @"音乐";
     UIBarButtonItem *Item = [UIBarButtonItem setButtonNormal:@"nav_music_libraries_normal" andHighlight:@"nav_music_libraries_highlighted" andTarger:self andTitle:nil andAction:@selector(navMusicClick)];
     self.navigationItem.leftBarButtonItem = Item;
 }
