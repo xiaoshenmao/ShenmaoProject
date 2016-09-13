@@ -49,17 +49,17 @@
 #pragma mark - 设置View
 - (void)setViews
 {
-//    _pagingScrollView = ({
-//        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
-//        pagingScrollView.backgroundColor = [UIColor redColor];
-//        self.pagingScrollView = pagingScrollView;
-//        pagingScrollView.delegate = self;
-//        pagingScrollView.dataSource = self;
-//        _pagingScrollView = pagingScrollView;
-//        [self.view addSubview:pagingScrollView];
-//
-//        pagingScrollView;
-//    });
+    _pagingScrollView = ({
+        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
+        pagingScrollView.backgroundColor = [UIColor redColor];
+        self.pagingScrollView = pagingScrollView;
+        pagingScrollView.delegate = self;
+        pagingScrollView.dataSource = self;
+        _pagingScrollView = pagingScrollView;
+        [self.view addSubview:pagingScrollView];
+
+        pagingScrollView;
+    });
     
     _moreButton = ({
         UIButton *button = [UIButton buttonWithImageName:@"more_normal"highlightImageName:@"more_highlighted" target:self action:@selector(moreButtonClick)];
