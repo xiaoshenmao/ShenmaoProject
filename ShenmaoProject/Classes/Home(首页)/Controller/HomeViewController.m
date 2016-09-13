@@ -12,6 +12,8 @@
 #import "GMCPagingScrollView.h"
 #import "UIButton+CustomButton.h"
 
+
+
 @interface HomeViewController ()<GMCPagingScrollViewDelegate,GMCPagingScrollViewDataSource>
 /** pagingScrollView */
 @property (nonatomic, strong) GMCPagingScrollView *pagingScrollView;
@@ -33,6 +35,7 @@
     [self setNavigationAttributes];
     [self setViews];
     [self setNetworks];
+    
 }
 
 - (void)setNavigationAttributes
@@ -49,17 +52,17 @@
 #pragma mark - 设置View
 - (void)setViews
 {
-    _pagingScrollView = ({
-        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
-        pagingScrollView.backgroundColor = [UIColor redColor];
-        self.pagingScrollView = pagingScrollView;
-        pagingScrollView.delegate = self;
-        pagingScrollView.dataSource = self;
-        _pagingScrollView = pagingScrollView;
-        [self.view addSubview:pagingScrollView];
-
-        pagingScrollView;
-    });
+//    _pagingScrollView = ({
+//        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
+//        pagingScrollView.backgroundColor = [UIColor redColor];
+//        self.pagingScrollView = pagingScrollView;
+//        pagingScrollView.delegate = self;
+//        pagingScrollView.dataSource = self;
+//        _pagingScrollView = pagingScrollView;
+//        [self.view addSubview:pagingScrollView];
+//
+//        pagingScrollView;
+//    });
     
     _moreButton = ({
         UIButton *button = [UIButton buttonWithImageName:@"more_normal"highlightImageName:@"more_highlighted" target:self action:@selector(moreButtonClick)];
@@ -117,8 +120,17 @@
 
 #pragma mark - network
 - (void)setNetworks{
+    [SMHttpRequste requestHomeMoreWithSuccess:^(id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+    } fail:^(NSError *error) {
+        NSLog(@"%@",error);
+        
+    }];
     
-}
+    
+    
+   }
 
 - (void)diaryButtonClick{
     NSLog(@"%s",__func__);
@@ -134,12 +146,12 @@
 }
 
 //- (NSUInteger)numberOfPagesInPagingScrollView:(GMCPagingScrollView *)pagingScrollView{
-//    return 10;
+//    return self.dataSource.count;
 //}
-
+//
 //- (UIView *)pagingScrollView:(GMCPagingScrollView *)pagingScrollView pageForIndex:(NSUInteger)index;
 //{
-    
+//    
 //}
 
 

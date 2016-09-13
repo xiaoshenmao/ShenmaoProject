@@ -24,5 +24,6 @@ pod 'pop'
 pod 'JTSImageViewController'
 pod 'NYTPhotoViewer'
 pod 'VGParallaxHeader'
+pod 'MJExtension', '~> 3.0.13'
   # Pods for ShenmaoProject
 end

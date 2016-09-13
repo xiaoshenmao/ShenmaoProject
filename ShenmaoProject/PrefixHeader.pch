@@ -9,29 +9,17 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "Constent.h"
+#import "XSMMacros.h"
 
-//屏幕
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
-#define ScreenHeight [UIScreen mainScreen].bounds.size.height
-
-// 是否为中文
-#define IS_CH_SYMBOL(chr)               ((int)(chr)>127)
-#define StringByTrimWhiteSpace(text)    [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
-#define IsStringEmpty(string)           (!string || [@"" isEqualToString:string])
-#define IsStringNotEmpty(string)        (string && ![@"" isEqualToString:string])
-
-// 字体
-#pragma mark - font
-#define FontWithNameSize(name, size)    [UIFont fontWithName:name size:size]
-#define FontWithSize(size)              [UIFont systemFontOfSize:size]
-#define ScoreFontWithSize(fontSize)     [UIFont fontWithName:@"Bradley Hand" size:fontSize]
-#define BoldFontWithSize(size)          [UIFont boldSystemFontOfSize:size]
-#define BoldSystemFont(size)            [UIFont boldSystemFontOfSize:size]
-#define systemFont(size)                [UIFont systemFontOfSize:size]
 
 //常用的头文件
 #import "UIView+Frame.h"
 #import "Masonry.h"
 #import "ShenmaoBaseViewController.h"
+#import "SMHttpRequste.h"
+
+
 
 #endif /* PrefixHeader_pch */
+

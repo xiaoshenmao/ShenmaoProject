@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		7EF729DFE4E3A4E6AE02E0C1 /* libPods-ShenmaoProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */; };
+		E8DA63591D87D0E400E68DEB /* SMHttpRequste.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */; };
+		E8DA63631D87E8C400E68DEB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63601D87E8C400E68DEB /* HomeViewController.m */; };
+		E8DA63661D87E90900E68DEB /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63651D87E90900E68DEB /* HomeModel.m */; };
 		E8E80AF71D87952F001B0A9E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E80AF61D87952F001B0A9E /* UIView+Frame.m */; };
 		E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */; };
 		EA155F471D83111700A62338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F461D83111700A62338 /* main.m */; };
 		EA155F4A1D83111700A62338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F491D83111700A62338 /* AppDelegate.m */; };
 		EA155F521D83111700A62338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA155F511D83111700A62338 /* Assets.xcassets */; };
 		EA155F551D83111700A62338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA155F531D83111700A62338 /* LaunchScreen.storyboard */; };
-		EA155F5D1D8314D800A62338 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EA155F5C1D8314D800A62338 /* Podfile */; };
 		EA155F681D83169F00A62338 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F671D83169F00A62338 /* CustomViewController.m */; };
-		EA155F6B1D83188600A62338 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F6A1D83188600A62338 /* HomeViewController.m */; };
 		EA155F6E1D83189200A62338 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F6D1D83189200A62338 /* MovieViewController.m */; };
 		EA155F711D8318A100A62338 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F701D8318A100A62338 /* MusicViewController.m */; };
 		EA155F741D8318AA00A62338 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA155F731D8318AA00A62338 /* ReadingViewController.m */; };
@@ -28,6 +29,15 @@
 /* Begin PBXFileReference section */
 		240050ED4BBAFACB65BEDF9F /* Pods-ShenmaoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShenmaoProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject.release.xcconfig"; sourceTree = "<group>"; };
 		89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShenmaoProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DA63501D87CD6100E68DEB /* ApiConstansts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiConstansts.h; sourceTree = "<group>"; };
+		E8DA63571D87D0E400E68DEB /* SMHttpRequste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHttpRequste.h; sourceTree = "<group>"; };
+		E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHttpRequste.m; sourceTree = "<group>"; };
+		E8DA635B1D87E24300E68DEB /* Constent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constent.h; sourceTree = "<group>"; };
+		E8DA635C1D87E38F00E68DEB /* XSMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMMacros.h; sourceTree = "<group>"; };
+		E8DA635F1D87E8C400E68DEB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E8DA63601D87E8C400E68DEB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E8DA63641D87E90900E68DEB /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		E8DA63651D87E90900E68DEB /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		E8E80AF51D87952F001B0A9E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		E8E80AF61D87952F001B0A9E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		E8EB3F941D867A250078CCD6 /* UIButton+CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CustomButton.h"; sourceTree = "<group>"; };
@@ -40,11 +50,8 @@
 		EA155F511D83111700A62338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA155F541D83111700A62338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA155F561D83111700A62338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA155F5C1D8314D800A62338 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		EA155F661D83169F00A62338 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
 		EA155F671D83169F00A62338 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
-		EA155F691D83188600A62338 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		EA155F6A1D83188600A62338 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		EA155F6C1D83189200A62338 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		EA155F6D1D83189200A62338 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		EA155F6F1D8318A100A62338 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
@@ -89,6 +96,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8DA634F1D87CCF500E68DEB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E8DA63501D87CD6100E68DEB /* ApiConstansts.h */,
+				E8DA63571D87D0E400E68DEB /* SMHttpRequste.h */,
+				E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E8DA635A1D87E21400E68DEB /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E8DA635B1D87E24300E68DEB /* Constent.h */,
+				E8DA635C1D87E38F00E68DEB /* XSMMacros.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		E8DA635D1D87E8C400E68DEB /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				E8DA635E1D87E8C400E68DEB /* Controller */,
+				E8DA63611D87E8C400E68DEB /* Model */,
+				E8DA63621D87E8C400E68DEB /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		E8DA635E1D87E8C400E68DEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E8DA635F1D87E8C400E68DEB /* HomeViewController.h */,
+				E8DA63601D87E8C400E68DEB /* HomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E8DA63611D87E8C400E68DEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8DA63641D87E90900E68DEB /* HomeModel.h */,
+				E8DA63651D87E90900E68DEB /* HomeModel.m */,
+			);
+			name = Model;
+			path = model;
+			sourceTree = "<group>";
+		};
+		E8DA63621D87E8C400E68DEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EA155F391D83111700A62338 = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +172,7 @@
 		EA155F441D83111700A62338 /* ShenmaoProject */ = {
 			isa = PBXGroup;
 			children = (
-				EA155F5E1D83166600A62338 /* classes */,
+				EA155F5E1D83166600A62338 /* Classes */,
 				EA155F481D83111700A62338 /* AppDelegate.h */,
 				EA155F491D83111700A62338 /* AppDelegate.m */,
 				EA155F451D83111700A62338 /* Supporting Files */,
@@ -125,42 +187,36 @@
 				EA155F511D83111700A62338 /* Assets.xcassets */,
 				EA155F531D83111700A62338 /* LaunchScreen.storyboard */,
 				EA155F561D83111700A62338 /* Info.plist */,
-				EA155F5C1D8314D800A62338 /* Podfile */,
 				EA155F461D83111700A62338 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EA155F5E1D83166600A62338 /* classes */ = {
+		EA155F5E1D83166600A62338 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				EA155F5F1D83166600A62338 /* Common */,
-				EA155F621D83166600A62338 /* Home(首页) */,
+				E8DA635D1D87E8C400E68DEB /* Home(首页) */,
 				EA155F631D83166600A62338 /* Movie(电影) */,
 				EA155F641D83166600A62338 /* Music(音乐) */,
 				EA155F651D83166600A62338 /* Reading(阅读) */,
 			);
+			name = Classes;
 			path = classes;
 			sourceTree = "<group>";
 		};
 		EA155F5F1D83166600A62338 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E8DA635A1D87E21400E68DEB /* Header */,
+				E8DA634F1D87CCF500E68DEB /* Network */,
 				EAD5634C1D852FC000CA79C2 /* ShenmaoBaseViewController.h */,
 				EAD5634D1D852FC000CA79C2 /* ShenmaoBaseViewController.m */,
 				EAD563481D84905800CA79C2 /* Category */,
-				EA155F601D83166600A62338 /* Lib */,
 				EA155F611D83166600A62338 /* MainController */,
 			);
 			name = Common;
 			path = common;
-			sourceTree = "<group>";
-		};
-		EA155F601D83166600A62338 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		EA155F611D83166600A62338 /* MainController */ = {
@@ -172,15 +228,6 @@
 				EA155F761D8319E100A62338 /* MainNavigationViewController.m */,
 			);
 			path = MainController;
-			sourceTree = "<group>";
-		};
-		EA155F621D83166600A62338 /* Home(首页) */ = {
-			isa = PBXGroup;
-			children = (
-				EA155F691D83188600A62338 /* HomeViewController.h */,
-				EA155F6A1D83188600A62338 /* HomeViewController.m */,
-			);
-			path = "Home(首页)";
 			sourceTree = "<group>";
 		};
 		EA155F631D83166600A62338 /* Movie(电影) */ = {
@@ -236,6 +283,7 @@
 				EA155F401D83111700A62338 /* Resources */,
 				1D0520B288D117649DF57D58 /* 📦 Embed Pods Frameworks */,
 				105CACACBF67F0290F745656 /* 📦 Copy Pods Resources */,
+				771D790AF1B59BDE3ED183AA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +300,7 @@
 		EA155F3A1D83111700A62338 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SM;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "神猫";
 				TargetAttributes = {
@@ -286,7 +335,6 @@
 			files = (
 				EA155F551D83111700A62338 /* LaunchScreen.storyboard in Resources */,
 				EA155F521D83111700A62338 /* Assets.xcassets in Resources */,
-				EA155F5D1D8314D800A62338 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +364,21 @@
 			inputPaths = (
 			);
 			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		771D790AF1B59BDE3ED183AA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,10 +416,12 @@
 				EA155F681D83169F00A62338 /* CustomViewController.m in Sources */,
 				EA155F741D8318AA00A62338 /* ReadingViewController.m in Sources */,
 				EA155F771D8319E100A62338 /* MainNavigationViewController.m in Sources */,
+				E8DA63591D87D0E400E68DEB /* SMHttpRequste.m in Sources */,
 				EA155F471D83111700A62338 /* main.m in Sources */,
 				EAD5634B1D84905800CA79C2 /* UIButton+UIBarButtonItem.m in Sources */,
-				EA155F6B1D83188600A62338 /* HomeViewController.m in Sources */,
 				EAD5634E1D852FC000CA79C2 /* ShenmaoBaseViewController.m in Sources */,
+				E8DA63661D87E90900E68DEB /* HomeModel.m in Sources */,
+				E8DA63631D87E8C400E68DEB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
