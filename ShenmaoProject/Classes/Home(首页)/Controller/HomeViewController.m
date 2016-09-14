@@ -31,11 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     [self setNavigationAttributes];
     [self setViews];
     [self setNetworks];
-    
 }
 
 - (void)setNavigationAttributes
@@ -43,26 +41,29 @@
     UIImageView *homeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
     self.navigationItem.titleView = homeView;
 }
+
 #pragma mark - set方法
 - (void)setDataSource:(NSArray *)dataSource{
     _dataSource = dataSource;
     
     
+    
 }
+
 #pragma mark - 设置View
 - (void)setViews
 {
-//    _pagingScrollView = ({
-//        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
-//        pagingScrollView.backgroundColor = [UIColor redColor];
-//        self.pagingScrollView = pagingScrollView;
-//        pagingScrollView.delegate = self;
-//        pagingScrollView.dataSource = self;
-//        _pagingScrollView = pagingScrollView;
-//        [self.view addSubview:pagingScrollView];
-//
-//        pagingScrollView;
-//    });
+    _pagingScrollView = ({
+        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
+        pagingScrollView.backgroundColor = [UIColor redColor];
+        self.pagingScrollView = pagingScrollView;
+        pagingScrollView.delegate = self;
+        pagingScrollView.dataSource = self;
+        _pagingScrollView = pagingScrollView;
+        [self.view addSubview:pagingScrollView];
+
+        pagingScrollView;
+    });
     
     _moreButton = ({
         UIButton *button = [UIButton buttonWithImageName:@"more_normal"highlightImageName:@"more_highlighted" target:self action:@selector(moreButtonClick)];
@@ -120,15 +121,17 @@
 
 #pragma mark - network
 - (void)setNetworks{
-//    [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
-//       NSMutableDictionary  *diction = [NSDictionary mj_objectArrayWithKeyValuesArray:responseObject];
-//        
-//        NSLog(@"%@",responseObject);
-//    } fail:^(NSError *error) {
-//        NSLog(@"%@",error);
-//        
-//    }];
-//    
+    [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
+       NSMutableDictionary  *diction = [NSMutableDictionary mj_objectArrayWithKeyValuesArray:responseObject];
+        
+        
+        
+        NSLog(@"%@",responseObject);
+    } fail:^(NSError *error) {
+        NSLog(@"%@",error);
+        
+    }];
+    
     
     
    }
