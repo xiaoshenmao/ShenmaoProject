@@ -12,29 +12,62 @@
 #import "GMCPagingScrollView.h"
 #import "UIButton+CustomButton.h"
 #import <MJExtension.h>
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "HomePageView.h"
 
 
 @interface HomeViewController ()<GMCPagingScrollViewDelegate,GMCPagingScrollViewDataSource>
 /** pagingScrollView */
 @property (nonatomic, strong) GMCPagingScrollView *pagingScrollView;
 /** 数组 */
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dicArray;
 /** diary_normal */
 @property (nonatomic, strong) UIButton *diaryButton;
 @property (nonatomic, strong) UILabel *diaryLabel;
 @property (nonatomic, strong) UIButton *likeButton;
 @property (nonatomic, strong) UILabel *likeLable;
 @property (nonatomic, strong) UIButton *moreButton;
+@property (nonatomic, strong) HomeModel *modelHome;
+@property (nonatomic, strong) NSArray *textArray;
 @end
 
 @implementation HomeViewController
 
+static NSString *kPageIdentifier = @"pagcell";
+
+- (NSMutableArray *)dicArray
+{
+    if (!_dicArray) {
+        _dicArray = [NSMutableArray array];
+    }
+    return  _dicArray;
+}
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _textArray = @[@"http://img4.duitang.com/uploads/item/201307/29/20130729153409_YCfU2.thumb.200_0.jpeg",
+                   @"http://cdn.duitang.com/uploads/item/201212/08/20121208141407_3YGMi.thumb.200_0.jpeg",
+                   @"http://cdn.duitang.com/uploads/item/201308/26/20130826211332_WZ4is.thumb.200_0.jpeg",
+                   @"http://img4.duitang.com/uploads/item/201301/21/20130121223918_aFk4h.thumb.200_0.jpeg",
+                   @"http://img4.duitang.com/uploads/item/201309/15/20130915114846_nsy2A.thumb.200_0.jpeg",
+                   @"http://cdn.duitang.com/uploads/item/201306/20/20130620142009_X3fv3.thumb.200_0.jpeg",
+                   @"http://img4.duitang.com/uploads/item/201306/17/20130617202501_Z2ZNP.thumb.200_0.jpeg",
+                   @"http://img4.duitang.com/uploads/item/201201/23/20120123181139_EvHrc.thumb.200_0.jpg",
+                   @"http://img4.duitang.com/uploads/item/201108/24/20110824232929_T85Zt.thumb.200_0.jpg",
+                   @"http://cdn.duitang.com/uploads/blog/201308/06/20130806213223_Q2Jfj.thumb.200_0.jpeg",
+                   @"http://cdn.duitang.com/uploads/item/201311/10/20131110141543_UMV24.thumb.200_0.jpeg",
+                   @"http://cdn.duitang.com/uploads/item/201307/18/20130718225516_RBMnr.thumb.200_0.jpeg",
+                   @"http://img4.duitang.com/uploads/item/201202/05/20120205163116_x2F4E.thumb.200_0.jpg",
+                   @"http://img4.duitang.com/uploads/item/201202/19/20120219150016_r48NA.thumb.200_0.jpg",];
    
     [self setNavigationAttributes];
     [self setViews];
     [self setNetworks];
+   
     
 }
 
@@ -43,26 +76,25 @@
     UIImageView *homeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
     self.navigationItem.titleView = homeView;
 }
-#pragma mark - set方法
-- (void)setDataSource:(NSArray *)dataSource{
-    _dataSource = dataSource;
-    
-    
-}
+
 #pragma mark - 设置View
 - (void)setViews
 {
-//    _pagingScrollView = ({
-//        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
-//        pagingScrollView.backgroundColor = [UIColor redColor];
-//        self.pagingScrollView = pagingScrollView;
-//        pagingScrollView.delegate = self;
-//        pagingScrollView.dataSource = self;
-//        _pagingScrollView = pagingScrollView;
-//        [self.view addSubview:pagingScrollView];
-//
-//        pagingScrollView;
-//    });
+    _pagingScrollView = ({
+        GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
+        [self.view addSubview:pagingScrollView];
+        pagingScrollView.backgroundColor = [UIColor blackColor];
+        pagingScrollView.delegate = self;
+        pagingScrollView.dataSource = self;
+        pagingScrollView.pageInsets = UIEdgeInsetsZero;
+        [pagingScrollView registerClass:[HomePageView class]
+                          forReuseIdentifier:kPageIdentifier];
+        [pagingScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+        
+        pagingScrollView;
+    });
     
     _moreButton = ({
         UIButton *button = [UIButton buttonWithImageName:@"more_normal"highlightImageName:@"more_highlighted" target:self action:@selector(moreButtonClick)];
@@ -120,17 +152,16 @@
 
 #pragma mark - network
 - (void)setNetworks{
-//    [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
-//       NSMutableDictionary  *diction = [NSDictionary mj_objectArrayWithKeyValuesArray:responseObject];
-//        
-//        NSLog(@"%@",responseObject);
-//    } fail:^(NSError *error) {
-//        NSLog(@"%@",error);
-//        
-//    }];
-//    
-    
-    
+    [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
+        //字典数组转模型数组
+       self.dicArray = [HomeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+        
+        NSLog(@"%@",self.dicArray);
+        
+    } fail:^(NSError *error) {
+        NSLog(@"%@",error);
+        
+    }];
    }
 
 - (void)diaryButtonClick{
@@ -141,19 +172,34 @@
     NSLog(@"%s",__func__);
 }
 
-
 - (void)moreButtonClick{
       NSLog(@"%s",__func__);
 }
 
-//- (NSUInteger)numberOfPagesInPagingScrollView:(GMCPagingScrollView *)pagingScrollView{
-//    return self.dataSource.count;
-//}
-//
-//- (UIView *)pagingScrollView:(GMCPagingScrollView *)pagingScrollView pageForIndex:(NSUInteger)index;
-//{
-//    
-//}
+
+#pragma mark - set方法
+
+
+#pragma mark - pagingScrollView dataSounth
+
+- (NSUInteger)numberOfPagesInPagingScrollView:(GMCPagingScrollView *)pagingScrollView{
+    return self.dicArray.count;
+}
+
+- (UIView *)pagingScrollView:(GMCPagingScrollView *)pagingScrollView pageForIndex:(NSUInteger)index;
+{
+    HomePageView *page = [pagingScrollView dequeueReusablePageWithIdentifier:kPageIdentifier];
+    HomeModel *model = self.dicArray[index];
+    
+    NSLog(@"%@",model.hpImgOriginalUrl);
+    
+    return page;
+}
+
+- (void)pagingScrollViewDidScroll:(GMCPagingScrollView *)pagingScrollView
+{
+    NSLog(@"x = %f", pagingScrollView.scrollView.contentOffset.x);
+}
 
 
 - (void)rightButtonClick{

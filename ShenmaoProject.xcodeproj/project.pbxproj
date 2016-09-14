@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EF729DFE4E3A4E6AE02E0C1 /* libPods-ShenmaoProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */; };
+		E86433911D88E2A000042D94 /* HomePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E86433901D88E2A000042D94 /* HomePageView.m */; };
 		E8DA63591D87D0E400E68DEB /* SMHttpRequste.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */; };
 		E8DA63631D87E8C400E68DEB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63601D87E8C400E68DEB /* HomeViewController.m */; };
 		E8DA63661D87E90900E68DEB /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63651D87E90900E68DEB /* HomeModel.m */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		240050ED4BBAFACB65BEDF9F /* Pods-ShenmaoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShenmaoProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShenmaoProject/Pods-ShenmaoProject.release.xcconfig"; sourceTree = "<group>"; };
 		89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShenmaoProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E864338F1D88E2A000042D94 /* HomePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageView.h; path = "ShenmaoProject/Classes/Home(首页)/View/HomePageView.h"; sourceTree = SOURCE_ROOT; };
+		E86433901D88E2A000042D94 /* HomePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageView.m; path = "ShenmaoProject/Classes/Home(首页)/View/HomePageView.m"; sourceTree = SOURCE_ROOT; };
 		E8DA63501D87CD6100E68DEB /* ApiConstansts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiConstansts.h; sourceTree = "<group>"; };
 		E8DA63571D87D0E400E68DEB /* SMHttpRequste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHttpRequste.h; sourceTree = "<group>"; };
 		E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHttpRequste.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 		E8DA63621D87E8C400E68DEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E864338F1D88E2A000042D94 /* HomePageView.h */,
+				E86433901D88E2A000042D94 /* HomePageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86433911D88E2A000042D94 /* HomePageView.m in Sources */,
 				E8E80AF71D87952F001B0A9E /* UIView+Frame.m in Sources */,
 				EA155F711D8318A100A62338 /* MusicViewController.m in Sources */,
 				E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */,
