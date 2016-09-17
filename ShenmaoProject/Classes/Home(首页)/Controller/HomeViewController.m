@@ -163,9 +163,13 @@ static NSString *kPageIdentifier = @"pagcell";
 #pragma mark - network
 - (void)setNetworks{
     [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
-        //字典数组转模型数组
-       self.dicArray = [HomeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        NSLog(@"%@",self.dicArray);
+        if (responseObject) {
+            //字典数组转模型数组
+            self.dicArray = [HomeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            NSLog(@"%@",self.dicArray);
+        }else{
+            
+        }
     } fail:^(NSError *error) {
         NSLog(@"%@",error);
     }];

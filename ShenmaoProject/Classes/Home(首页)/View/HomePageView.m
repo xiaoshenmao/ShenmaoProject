@@ -54,6 +54,8 @@
 #pragma mark - publicMothed
 - (void)setHomeView{
     //setViews
+    
+    
     _scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] init];
         scrollView.backgroundColor = [UIColor yellowColor];
@@ -78,7 +80,6 @@
     });
     
     
-    //自定义cell 
     
     
 }
