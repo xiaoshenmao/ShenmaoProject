@@ -49,6 +49,13 @@ static NSString *kPageIdentifier = @"pagcell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
+    
+    [self setNavigationAttributes];
+    [self setViews];
+    [self setNetworks];
+    
     _textArray = @[@"http://img4.duitang.com/uploads/item/201307/29/20130729153409_YCfU2.thumb.200_0.jpeg",
                    @"http://cdn.duitang.com/uploads/item/201212/08/20121208141407_3YGMi.thumb.200_0.jpeg",
                    @"http://cdn.duitang.com/uploads/item/201308/26/20130826211332_WZ4is.thumb.200_0.jpeg",
@@ -77,11 +84,14 @@ static NSString *kPageIdentifier = @"pagcell";
     self.navigationItem.titleView = homeView;
 }
 
+#pragma mark - set方法
+
 #pragma mark - 设置View
 - (void)setViews
 {
     _pagingScrollView = ({
         GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
+
         [self.view addSubview:pagingScrollView];
         pagingScrollView.backgroundColor = [UIColor blackColor];
         pagingScrollView.delegate = self;
@@ -92,7 +102,7 @@ static NSString *kPageIdentifier = @"pagcell";
         [pagingScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
         }];
-        
+
         pagingScrollView;
     });
     
@@ -153,14 +163,15 @@ static NSString *kPageIdentifier = @"pagcell";
 #pragma mark - network
 - (void)setNetworks{
     [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
-        //字典数组转模型数组
-       self.dicArray = [HomeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        
-        NSLog(@"%@",self.dicArray);
-        
+        if (responseObject) {
+            //字典数组转模型数组
+            self.dicArray = [HomeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            NSLog(@"%@",self.dicArray);
+        }else{
+            
+        }
     } fail:^(NSError *error) {
         NSLog(@"%@",error);
-        
     }];
    }
 
