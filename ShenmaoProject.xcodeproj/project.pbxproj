@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7EF729DFE4E3A4E6AE02E0C1 /* libPods-ShenmaoProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */; };
 		E86433911D88E2A000042D94 /* HomePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E86433901D88E2A000042D94 /* HomePageView.m */; };
+		E8DA29C61D8E3BA90053DB84 /* UIView+showHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA29C51D8E3BA90053DB84 /* UIView+showHUD.m */; };
 		E8DA63591D87D0E400E68DEB /* SMHttpRequste.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */; };
 		E8DA63631D87E8C400E68DEB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63601D87E8C400E68DEB /* HomeViewController.m */; };
 		E8DA63661D87E90900E68DEB /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DA63651D87E90900E68DEB /* HomeModel.m */; };
@@ -32,6 +33,8 @@
 		89E6D8B8813D4AF67E791135 /* libPods-ShenmaoProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShenmaoProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E864338F1D88E2A000042D94 /* HomePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageView.h; path = "ShenmaoProject/Classes/Home(首页)/View/HomePageView.h"; sourceTree = SOURCE_ROOT; };
 		E86433901D88E2A000042D94 /* HomePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageView.m; path = "ShenmaoProject/Classes/Home(首页)/View/HomePageView.m"; sourceTree = SOURCE_ROOT; };
+		E8DA29C41D8E3BA90053DB84 /* UIView+showHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+showHUD.h"; path = "ShenmaoProject/Classes/Common/Category/UIView+showHUD.h"; sourceTree = SOURCE_ROOT; };
+		E8DA29C51D8E3BA90053DB84 /* UIView+showHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+showHUD.m"; path = "ShenmaoProject/Classes/Common/Category/UIView+showHUD.m"; sourceTree = SOURCE_ROOT; };
 		E8DA63501D87CD6100E68DEB /* ApiConstansts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiConstansts.h; sourceTree = "<group>"; };
 		E8DA63571D87D0E400E68DEB /* SMHttpRequste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHttpRequste.h; sourceTree = "<group>"; };
 		E8DA63581D87D0E400E68DEB /* SMHttpRequste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHttpRequste.m; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				E8EB3F951D867A250078CCD6 /* UIButton+CustomButton.m */,
 				E8E80AF51D87952F001B0A9E /* UIView+Frame.h */,
 				E8E80AF61D87952F001B0A9E /* UIView+Frame.m */,
+				E8DA29C41D8E3BA90053DB84 /* UIView+showHUD.h */,
+				E8DA29C51D8E3BA90053DB84 /* UIView+showHUD.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E86433911D88E2A000042D94 /* HomePageView.m in Sources */,
+				E8DA29C61D8E3BA90053DB84 /* UIView+showHUD.m in Sources */,
 				E8E80AF71D87952F001B0A9E /* UIView+Frame.m in Sources */,
 				EA155F711D8318A100A62338 /* MusicViewController.m in Sources */,
 				E8EB3F961D867A250078CCD6 /* UIButton+CustomButton.m in Sources */,
