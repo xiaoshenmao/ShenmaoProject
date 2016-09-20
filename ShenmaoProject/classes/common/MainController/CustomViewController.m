@@ -38,7 +38,7 @@
     [self setController:[[HomeViewController alloc] init] andNomalImage:[UIImage imageNamed:@"tab_home_normal"] andSelectedImage:[UIImage imageNamed:@"tab_home_selected"] andTitle:@"首页"];
     
     //Reading controller
-    [self setController:[[ReadingViewController alloc] init] andNomalImage:[UIImage imageNamed:@"tab_reading_normal"] andSelectedImage:[UIImage imageNamed:@"tab_reading_selected"] andTitle:@"阅读"];
+    [self setController:[[ReadingViewController alloc] init] andNomalImage:[UIImage imageNamed:@"tab_read_normal"] andSelectedImage:[UIImage imageNamed:@"tab_read_selected"] andTitle:@"阅读"];
     
     //Music controller
     [self setController:[[MusicViewController alloc] init] andNomalImage:[UIImage imageNamed:@"tab_music_normal"] andSelectedImage:[UIImage imageNamed:@"tab_music_selected"] andTitle:@"音乐"];

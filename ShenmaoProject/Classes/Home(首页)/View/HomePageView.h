@@ -11,6 +11,12 @@
 
 @interface HomePageView : UIView
 
+typedef NS_ENUM(NSInteger, UIButtonClickType) {
+    likeButtonBlockType,
+    moreButtonBlockType,
+    diaryButtonBlockType,
+};
 
+@property (nonatomic, copy) void (^UIButtonClicked)(UIButtonClickType type);
 
 @end

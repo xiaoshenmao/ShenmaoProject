@@ -25,5 +25,6 @@ pod 'JTSImageViewController'
 pod 'NYTPhotoViewer'
 pod 'VGParallaxHeader'
 pod 'MJExtension', '~> 3.0.13'
+pod 'DZNEmptyDataSet', '~> 1.8.1'
   # Pods for ShenmaoProject
 end

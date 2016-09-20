@@ -19,7 +19,18 @@
 #import "ShenmaoBaseViewController.h"
 #import "SMHttpRequste.h"
 
+#pragma mark - Block
 
+typedef void(^CommonActionBlock)(void);
 
 #endif /* PrefixHeader_pch */
+
+
+typedef NS_ENUM(NSUInteger, MLBSearchType) {
+    MLBSearchTypeHome,
+    MLBSearchTypeRead,
+    MLBSearchTypeMusic,
+    MLBSearchTypeMovie,
+    MLBSearchTypeAuthor,
+};
 

@@ -8,6 +8,7 @@
 
 #import "MainNavigationViewController.h"
 #import "UIBarButtonItem+CustomUIBarButton.h"
+#import "SearchViewController.h"
 
 
 @interface MainNavigationViewController ()
@@ -25,20 +26,27 @@
         UIBarButtonItem *mainLeftButton = [UIBarButtonItem setButtonNormal:@"nav_me_normal" andHighlight:@"nav_me_highlighted" andTarger:self andTitle:nil andAction:@selector(mainLeftButtonClick)];
         UIBarButtonItem *mainRightButton = [UIBarButtonItem setButtonNormal:@"more_normal" andHighlight:@"more_highlighted" andTarger:self andTitle:nil andAction:@selector(mainMusicButtonClick)];
         rootViewController.navigationItem.rightBarButtonItems = @[mainLeftButton,mainRightButton];
+         UIBarButtonItem *leftSearchButton = [UIBarButtonItem setButtonNormal:@"icon_search" andHighlight:@"icon_search" andTarger:self andTitle:nil andAction:@selector(mainSearchButtonClick)];
+        rootViewController.navigationItem.leftBarButtonItem = leftSearchButton;
     }
     return self;
-}
-
-- (void)mainLeftButtonClick{
-       
 }
 
 - (void)setNavigationItem{
     
 }
 
+- (void)mainLeftButtonClick{
+       
+}
+
 - (void)mainMusicButtonClick{
-    NSLog(@"%s",__func__);
+    
+}
+#pragma mark - searchViewController
+- (void)mainSearchButtonClick{
+     NSLog(@"%s",__func__);
+    [self presentViewController: [[UINavigationController alloc] initWithRootViewController:[[SearchViewController alloc] init]] animated:YES completion:nil];
 }
 @end
 

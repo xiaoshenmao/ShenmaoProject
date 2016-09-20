@@ -10,4 +10,8 @@
 
 @interface HomeViewController : ShenmaoBaseViewController
 
+#pragma mark - public
+@property (nonatomic, copy) CommonActionBlock likeButtonBlock;
+@property (nonatomic, copy) CommonActionBlock moreButtonBlock;
+@property (nonatomic, copy) CommonActionBlock diaryButtonBlock;
 @end

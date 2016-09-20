@@ -15,6 +15,8 @@
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "HomePageView.h"
+#import "MBProgressHUD.h"
+#import "UIView+MLBShowHUD.h"
 
 
 @interface HomeViewController ()<GMCPagingScrollViewDelegate,GMCPagingScrollViewDataSource>
@@ -44,38 +46,11 @@ static NSString *kPageIdentifier = @"pagcell";
     return  _dicArray;
 }
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    
     [self setNavigationAttributes];
     [self setViews];
     [self setNetworks];
-    
-    _textArray = @[@"http://img4.duitang.com/uploads/item/201307/29/20130729153409_YCfU2.thumb.200_0.jpeg",
-                   @"http://cdn.duitang.com/uploads/item/201212/08/20121208141407_3YGMi.thumb.200_0.jpeg",
-                   @"http://cdn.duitang.com/uploads/item/201308/26/20130826211332_WZ4is.thumb.200_0.jpeg",
-                   @"http://img4.duitang.com/uploads/item/201301/21/20130121223918_aFk4h.thumb.200_0.jpeg",
-                   @"http://img4.duitang.com/uploads/item/201309/15/20130915114846_nsy2A.thumb.200_0.jpeg",
-                   @"http://cdn.duitang.com/uploads/item/201306/20/20130620142009_X3fv3.thumb.200_0.jpeg",
-                   @"http://img4.duitang.com/uploads/item/201306/17/20130617202501_Z2ZNP.thumb.200_0.jpeg",
-                   @"http://img4.duitang.com/uploads/item/201201/23/20120123181139_EvHrc.thumb.200_0.jpg",
-                   @"http://img4.duitang.com/uploads/item/201108/24/20110824232929_T85Zt.thumb.200_0.jpg",
-                   @"http://cdn.duitang.com/uploads/blog/201308/06/20130806213223_Q2Jfj.thumb.200_0.jpeg",
-                   @"http://cdn.duitang.com/uploads/item/201311/10/20131110141543_UMV24.thumb.200_0.jpeg",
-                   @"http://cdn.duitang.com/uploads/item/201307/18/20130718225516_RBMnr.thumb.200_0.jpeg",
-                   @"http://img4.duitang.com/uploads/item/201202/05/20120205163116_x2F4E.thumb.200_0.jpg",
-                   @"http://img4.duitang.com/uploads/item/201202/19/20120219150016_r48NA.thumb.200_0.jpg",];
-   
-    [self setNavigationAttributes];
-    [self setViews];
-    [self setNetworks];
-   
-    
 }
 
 - (void)setNavigationAttributes
@@ -90,6 +65,7 @@ static NSString *kPageIdentifier = @"pagcell";
 - (void)setViews
 {
     _pagingScrollView = ({
+        
         GMCPagingScrollView *pagingScrollView = [[GMCPagingScrollView alloc] init];
 
         [self.view addSubview:pagingScrollView];
@@ -162,29 +138,42 @@ static NSString *kPageIdentifier = @"pagcell";
 
 #pragma mark - network
 - (void)setNetworks{
+    __weak typeof(self) weakSelf = self;
     [SMHttpRequste requestHomeMoreWithSuccess:^(NSMutableDictionary *responseObject) {
-        if (responseObject) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (!strongSelf)  return;
+    
+        if ([responseObject[@"res"] integerValue] == 0) {
             //字典数组转模型数组
             self.dicArray = [HomeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
             NSLog(@"%@",self.dicArray);
         }else{
-            
+            [self.view showHUDServerError];
         }
     } fail:^(NSError *error) {
+        [self.view showHUDModelTransformFailedWithError:error];
         NSLog(@"%@",error);
     }];
    }
 
 - (void)diaryButtonClick{
-    NSLog(@"%s",__func__);
+    if (self.diaryButtonBlock) {
+        self.diaryButtonBlock();
+    }
 }
 
 - (void)likeButtonClick{
-    NSLog(@"%s",__func__);
+    if (self.likeButtonBlock) {
+        self.likeButtonBlock();
+    }
+
 }
 
 - (void)moreButtonClick{
-      NSLog(@"%s",__func__);
+    if (self.moreButtonBlock) {
+        self.moreButtonBlock();
+    }
+
 }
 
 
@@ -212,8 +201,8 @@ static NSString *kPageIdentifier = @"pagcell";
     NSLog(@"x = %f", pagingScrollView.scrollView.contentOffset.x);
 }
 
-
 - (void)rightButtonClick{
     NSLog(@"%s",__func__);
 }
+
 @end

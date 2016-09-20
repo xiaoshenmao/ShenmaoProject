@@ -7,6 +7,7 @@
 //
 
 #import "HomePageView.h"
+#import "UIButton+CustomButton.h"
 
 @interface HomePageView ()
 
@@ -15,6 +16,7 @@
 @property (strong, nonatomic) UIButton *likeButton;
 @property (strong, nonatomic) UILabel *likeNumLabel;
 @property (strong, nonatomic) UIButton *moreButton;
+@property (nonatomic, strong) UILabel *likeLable;
 @property (strong, nonatomic) UIView *contentView;
 @property (strong, nonatomic) UIImageView *coverView;
 @property (strong, nonatomic) UILabel *titleLabel;
@@ -53,8 +55,8 @@
 
 #pragma mark - publicMothed
 - (void)setHomeView{
-    //setViews
     
+    if (_scrollView) return;
     
     _scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] init];
@@ -79,12 +81,78 @@
         view;
     });
     
+    _moreButton = ({
+        UIButton *button = [UIButton buttonWithImageName:@"more_normal"highlightImageName:@"more_highlighted" target:self action:@selector(moreButtonClick)];
+        [button sizeToFit];
+        [_scrollView addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make){
+            make.right.equalTo(_scrollView).offset(-10);
+            make.width.equalTo(@44);
+            make.height.equalTo(@44);
+            make.bottom.equalTo(_scrollView).offset(-70);
+        }];
+        
+        button;
+    });
     
+    _likeLable = ({
+        UILabel *lable = [[UILabel alloc] init];
+        [_scrollView addSubview:lable];
+        lable.textColor = [UIColor grayColor];
+        lable.text = @"1313";
+        lable.font = [UIFont systemFontOfSize:14];
+        [lable mas_makeConstraints:^(MASConstraintMaker *make){
+            make.right.equalTo(_moreButton).offset(-70);
+            make.top.equalTo(_moreButton);
+            make.bottom.equalTo(_moreButton);
+        }];
+        
+        lable;
+    });
+
     
+    _likeButton = ({
+        UIButton *button = [UIButton buttonWithImageName:@"like_normal"selectedImageName:@"like_highlighted" target:self action:@selector(likeButtonClick)];
+        [_scrollView addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make){
+            make.right.equalTo(_likeLable).offset(-30);
+            make.top.equalTo(_likeLable);
+            make.bottom.equalTo(_likeLable);
+        }];
+        
+        button;
+    });
     
+    _diaryButton = ({
+        UIButton *button = [UIButton buttonWithImageName:@"diary_normal" highlightImageName:@"diary_highlight" target:self action:@selector(diaryButtonClick)];
+        [_scrollView addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_scrollView).offset(20);
+            make.size.sizeOffset(CGSizeMake(66, 44));
+            make.top.equalTo(_moreButton);
+        }];
+        
+        button;
+    });
 }
 
 
+- (void)diaryButtonClick{
+    if (_UIButtonClicked) {
+        _UIButtonClicked(diaryButtonBlockType);
+    }
+}
 
+- (void)moreButtonClick{
+    if (_UIButtonClicked) {
+        _UIButtonClicked(moreButtonBlockType);
+    }
+}
+
+- (void)likeButtonClick{
+    if (_UIButtonClicked) {
+        _UIButtonClicked(likeButtonBlockType);
+    }
+}
 
 @end

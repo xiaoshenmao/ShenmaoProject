@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseItem.h"
 
-
-@interface HomeModel : NSObject
+@interface HomeModel : BaseItem
 
 @property (nonatomic, strong) NSString *authorId;
 @property (nonatomic, strong) NSString *commentNum;

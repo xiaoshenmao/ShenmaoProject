@@ -10,11 +10,5 @@
 
 @interface ShenmaoBaseViewController : UIViewController
 
-//HUD
 
-- (void)showHUDErrow;
-
-- (void)showHUDNetworkErrow;
-
-- (void)showHUDString:(NSString *)string;
 @end
